@@ -29,7 +29,7 @@
         </section>
         <section>
             <header>
-                <h2>Questions</h2>
+                <h2>Questions (A1)</h2>
             </header>
             <ol>
                 <li>The server provides resources to one or many clients, such as files, remote devices or processing power. Servers await communication sessions initiated by clients.</li>
@@ -38,6 +38,18 @@
                 <li>The <em>Domain Name System</em> is a system which maps human-friendly text labels known as domain names to numerical IP addresses.</li>
                 <li>The Internet describes the computer network that the World Wide Web (and a heap of other services and systems) run on. The WWW is a method for accessing information over the Internet, more or less.</li>
                 <li>The <em>HyperText Markup Language</em> is as the name implies a markup language (i.e. a language for annotating and describing data), with the "Hyper" bit coming from the "hyperlinks" connecting each HTML document. It is the main markup language used for creating and displaying web pages.</li>
+            </ol>
+        </section>
+        <section>
+            <header>
+                <h2>Questions (A2)</h2>
+            </header>
+            <ol>
+                <li>Inline styles are above internal stylesheets defined in <code>style</code> elements and externally loaded stylesheets in the CSS order of precedence, with the exception of non-inline rules defined using <code>!important</code>.</li>
+                <li>IDs should (only) be used if the element is unique and not expected to be reused elsewhere in the HTML document later. Classes should be used for reusable (though not necessarily reused) elements.</li>
+                <li>The RGBA colour format defines a colour on the form rgba(0-255,0-255,0-255,0-1), where the first three numbers are the red, green and blue values of the colour respectively and the last digit is the opacity of the colour.</li>
+                <li>We need the stylesheet loaded before we can properly render the body as specified in the stylesheet. If we load it afterwards we will likely get what's called a flash of unstyled content, where the page first loads parts using the browser default stylesheet and then suddenly switches styles once the external stylesheet loads. This is also non-standard behaviour in the first place, so the stylesheet may or may not just not load at all instead; the HTML5 spec does not allow for <code>link</code> elements with the <code>rel</code> attribute required for loading stylesheets outside <code>head</code> at all.</li>
+                <li><code>article p</code> and <code>article > p</code> would both do the trick.</li>
             </ol>
         </section>
         <footer>
