@@ -1,0 +1,35 @@
+/* Part 3 */
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #C3C3C3;
+  height: 3em;
+}
+
+footer p {
+  position: absolute;
+  left: 1em;
+}
+
+.wrapper {
+  padding: 1em 1em 3em 1em;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Part 4 */
+ul {
+  list-style-type: square;
+}
+
+ul ul li:last-child {
+  color: #0051AF;
+  font-weight: bold;
+}
