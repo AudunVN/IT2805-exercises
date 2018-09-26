@@ -1,0 +1,17 @@
+1. This is usually done by default to preserve data usage on mobile devices, as it
+avoids loading large videos until the user has actually indicated that they want to
+watch them by interacting with them (i.e., by pressing play).
+
+2. Nothing at all, our device width falls outside that media query. It only applies
+to devices where the device width/horizontal screen resolution is between 768px to 1024px.
+
+3. Having two sites brings a whole lot of headaches, such as figuring out when to redirect a device from
+one website to another, plus having to deal (or not deal) with users sharing links from a mobile
+device to a desktop device and vice versa. It is often simpler to just bake responsiveness
+into the main site rather than having two versions of the same content to maintain.
+
+With a single (well-implemented) responsive website all your content ideally "just works" on any
+device that opens it. It also often makes search engines happier, as they see you have a site that
+works on both mobile and desktop user agents - Google and others often penalize sites that
+do not work well on mobile. It usually leads to easier maintenance and an improved user experience
+with less work than the two-page solution.

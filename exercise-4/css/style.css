@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: white;
+  font-family: arial, sans-serif;
+}
+
+#screen {
+  position: relative;
+}
+
+video,
+.fallback-img img {
+  height: auto;
+  width: 100%;
+}
+  
+#title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#title > img {
+  width: 100%;
+}
+
+article {
+  width: 80%;
+  margin-top: 10%;
+  /* the "correct" example uses something approximately like 
+      this for margin-top in addition to left/right margins. */
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+p {
+  color: black;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+video {
+  display: none;
+}
+
+.fallback-img img {
+  display: inline-block;
+}
+
+@media only screen and (min-width: 940px) {
+  video {
+    display: inline-block;
+  }
+
+  .fallback-img img {
+    display: none;
+  }
+}
