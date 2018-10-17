@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tax form</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-family: "Verdana", sans-serif;
+            }
+
+            form {
+                max-width: 30em;
+                margin: 0 auto;
+                padding: 1em;
+                background: #EAEAEA;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                box-shadow: 0 0em 0.3em 0 rgba(0,0,0,0.5);
+            }
+
+            form > h2 {
+                margin-top: 0;
+                margin-bottom: 0.5em;
+            }
+
+            .input-group input,
+            form,
+            form button {
+                border-radius: 0.15em;
+                border: 0 none transparent;
+            }
+
+            .input-group label:first-child {
+                width: 100%;
+                display: block;
+                margin-bottom: 0.25em;
+                
+            }
+
+            .input-group input {
+                width: 100%;
+            }
+
+            .input-group input[type="text"],
+            .input-group input[type="date"],
+            .input-group input[type="email"],
+            .input-group input[type="number"] {
+                padding: 0.5em;
+                box-sizing : border-box;
+            }
+
+            .input-group input[disabled] {
+                background: #CECECE;
+            }
+
+            .input-group input[type="radio"],
+            .input-group input[type="checkbox"],
+            .input-group input[type="radio"] + label,
+            .input-group input[type="checkbox"] + label {
+                width: auto;
+                cursor: pointer;
+            }
+
+            .input-group {
+                display: block;
+                margin-bottom: 0.5em;
+            }
+
+            form button {
+                background-color: #4040da;
+                padding: 0.75em;
+                color: #f3f3f3;
+                cursor: pointer;
+                transition: background-color 0.2s ease;
+            }
+
+            form button:hover {
+                background-color: #2525c1;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="http://folk.ntnu.no/michaedm/norwegian-tax-administration/receive.php" method="post">
+            <h2>Tax form</h2>
+            <div class="input-group">
+                <label class="input-group-label">Gender</label>
+
+                <input type="radio" id="gender_male" name="gender" value="male" required>
+                <label for="gender_male">Male</label>
+
+                <input type="radio" id="gender_female" name="gender" value="female" required>
+                <label for="gender_female">Female</label>
+
+                <input type="radio" id="gender_other" name="gender" value="other" required>
+                <label for="gender_other">Other</label>
+            </div>
+            <div class="input-group">
+                <label for="gender_male">Real name</label>
+                <!-- 
+                    Note: This will not match most international alphabets.
+                    I considered including a more extensive regex here, but
+                    those matching absolutely all alphabetical characters in
+                    all languages are pretty unwieldy.
+                -->
+                <input type="text" id="name" name="name" pattern="[\w \-æøåÆØÅ]*" required>
+            </div>
+            <div class="input-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="birthdate">Birthdate</label>
+                <input type="date" id="birthdate" name="birthdate" max="1984-12-28" required>
+            </div>
+            <div class="input-group">
+                <label for="hero">Hero name</label>
+                <input type="text" id="hero" name="hero" required>
+            </div>
+            <div class="input-group">
+                <input type="checkbox" id="spandex" name="spandex" value="true">
+                <label for="spandex">Do you wear spandex?</label>
+            </div>
+            <!-- 
+                I have here decided to use range inputs, as they helpfully show the min-max
+                range of the number directly and since the exact numerical value is not that important here.
+            -->
+            <div class="input-group">
+                <label for="strength">Strength</label>
+                <input name="strength" id="strength" type="range" min="1" max="10" step="1">
+            </div>
+            <div class="input-group">
+                <label for="speed">Speed</label>
+                <input name="speed" id="speed" type="range" min="1" max="10" step="1">
+            </div>
+            <div class="input-group">
+                <label for="intelligence">Intelligence</label>
+                <input name="intelligence" id="intelligence" type="range" min="1" max="10" step="1">
+            </div>
+            <div class="input-group">
+                <label for="income">Income</label>
+                <input name="income" id="income" type="number" min="0" step="1" required>
+            </div>
+            <div class="input-group">
+                <label for="wealth">Wealth</label>
+                <input name="wealth" id="wealth" type="number" min="0" step="1" required>
+            </div>
+            <div class="input-group">
+                <label for="tax">Tax</label>
+                <input disabled name="tax" id="tax" type="number">
+            </div>
+            <button type="submit">Submit form</button>
+            <button type="button" id="calculate-tax-btn">Calculate taxes</button>
+        </form>
+        <script>
+            function calculateTax(income, wealth) {
+                return (0.35 * income) + (0.25 * wealth);
+            }
+
+            document.querySelector("form #calculate-tax-btn").onclick = function() {
+                const income = document.getElementById("income").value;
+                const wealth = document.getElementById("wealth").value;
+                document.getElementById("tax").value = calculateTax(income, wealth);
+            }
+        </script>
+    </body>
+</html>

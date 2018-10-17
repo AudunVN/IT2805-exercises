@@ -1,0 +1,13 @@
+1. This is due to how floating-point math is implemented in not just JavaScript, but most programming
+languages; most decimal floating point numbers cannot be represented precisely in binary, and thus
+may not yield the expected results in logic/comparisons involving floating-point math. If one checks
+what 0.1+0.2 is in JavaScript, you get 0.30000000000000004, which is clearly not equal to 0.3.
+2. It indicates the HTTP method that the user agent should use to submit the form data to the server.
+3. The conventional method for transmitting data to a server using a GET request is embedding it in the URL,
+there are no standard headers in the GET request for embedding data - a POST request should usually be used
+instead if there are requirements beyond what can be placed in the URL.
+4. Client-side validation is unsafe since you can't trust data sent from the client - an user may send whatever
+they want to your server by modifying the form, web page or scripts used for validation, or by directly sending
+the appropriate POST/GET requests to your server, meaning you can (or, well, will) end up with invalid (and
+potentially dangerous) inputs being sent to your server.
+5. For longer multiline text inputs, such as a basic text editor for a forum, blog, comment section or similar use cases.
