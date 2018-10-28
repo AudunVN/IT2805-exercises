@@ -1,0 +1,97 @@
+body {
+    font-family: "Verdana", sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* 
+    The .list-container selector is in most cases redundant here,
+    but is kept in case we want to add some lists, inputs or whatnot
+    elsewhere in the document later - it's useful to restrict the
+    styles to just the list itself in advance then.
+*/
+
+.list-container {
+    max-width: 30em;
+    margin: 0 auto;
+    padding: 1em;
+    background: #EAEAEA;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    box-shadow: 0 0em 0.3em 0 rgba(0,0,0,0.5);
+}
+
+.list-container ul {
+    padding-left: 0;
+}
+
+.list-container ul li {
+    list-style: none;
+    margin-top: 1em;
+}
+
+.list-container ul li label,
+.list-container ul li input {
+    cursor: pointer;
+}
+
+.list-container ul li input {
+    height: 1.5em;
+    width: 1.5em;
+    vertical-align: -0.3em;
+    margin-right: 0.75em;
+}
+
+.list-container ul li input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+}
+
+.list-container h2 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.list-container .input-container input,
+.list-container,
+.list-container .input-container button {
+    border-radius: 0.15em;
+    border: 0 none transparent;
+}
+
+.list-container .input-container {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 2.25em;
+}
+
+.list-container  .input-container input {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-right: 8em;
+    padding-left: 1em;
+    bottom: 0;
+    box-sizing: border-box;
+} 
+
+.list-container button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 7em;
+    background-color: #4040da;
+    padding: 0.75em;
+    color: #f3f3f3;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.list-container button:hover {
+    background-color: #2525c1;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="utf-8">
+		<meta name="description" content="Exercise 7 in IT2805">
+		<meta name="author" content="Audun V. Nytrø">
+        <title>Exercise 7 in IT2805</title>
+        <link rel="icon" href="favicon.png">
+        <link rel="stylesheet" href="todo.css">
+    </head>
+    <body>
+        <header>
+            <h1>To-do</h1>
+        </header>
+        <section id="list-1" class="list-container">
+            <!-- 
+                decided to use classes instead of ids, in 
+                case we want to add more lists or something
+            -->
+            <header>
+                <h2>List</h2>
+                <div class="input-container">
+                    <input class="task-input" type="text" autofocus>
+                    <button class="add-task-btn" role="button">Add task</button>
+                </div>
+            </header>
+            <section>
+                <ul></ul>
+                <div class="progress-container">
+                    No tasks added yet
+                </div>
+            </section>
+        </section>
+        <script src="todo.js"></script>
+    </body>
+</html>
